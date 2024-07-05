@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🛡️ PhotonMail | Secure e-mail</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lost password</h1>
+    <p>Forgot your password? Let's get you a new one!</p>
+
+    <form method="POST">
+      <div class="form-item">
+	<label>E-mail address</label>
+	<input type="text" name="email"/>
+      </div>
+ 
+      <div class="form-item">
+	<label>What is the name of your pet?</label>
+	<input type="text" name="question1"/>
+      </div>
+
+      <div class="form-item">
+	<label>What is the name of your favourite teacher?</label>
+	<input type="text" name="question2"/>
+      </div>
+
+      <div class="form-item">
+	<label>What is your birthdate?</label>
+	<input type="date" name="question3"/>
+      </div>
+
+      <div class="form-item">
+	<label>New password</label>
+	<input type="password" name="new_password"/>
+      </div>
+      
+      {% if error %}
+      <div class="form-item">
+	<div class="error">
+	  {{ error }}
+	</div>
+      </div>
+      {% endif %}
+
+      <div class="form-item">
+	<button>Change Password</button>
+      </div>
+    </form>
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+The code in this repository are snippets, proof of (sometimes not working) concepts.
+
+It should not be run without a thourough understanding of what it does.

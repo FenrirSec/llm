@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🛡️ PhotonMail | Secure e-mail</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="text/javascript" src="/static/mailbox.js"></script>
+    <script>
+      window.inbox = {{inbox | tojson}};
+      window.sent = {{sent | tojson}};
+    </script>
+</head>
+<body style="display: flex">
+  <div class="menu">
+    <h3>PhotonMail</h3>
+    <div class="menu-item" id="item-new" onclick="changePanel('new')">New message</div>
+    <div class="menu-item" id="item-inbox" onclick="changePanel('inbox')">Inbox</div>
+    <div class="menu-item" id="item-sent" onclick="changePanel('sent')">Sent</div>
+    <div class="menu-item" id="item-logout" onclick="logout()">Logout</div>
+    <div class="version-number">
+      PhotonMail | {{ version }}
+    </div>
+  </div>
+  <div id="inbox" class="panel mailbox">
+    {% if not inbox or inbox | length == 0 %}
+    <h1>Inbox</h1>
+    You currently have no e-mails. Click "New message" to start writing a new e-mail.
+    {% else %}
+    {% for message in inbox %}
+    <div class="mailbox-item {{ 'read' if message['read'] else ''}}" onclick="openModal({{ message['id'] }})">
+      <b>{{ message['addr_from'] }}</b>
+      <div style="display: flex; justify-content: space-between">
+	<p>{{ message['subject'] }}</p><p>{{ message['date'] }}</p>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+  <div id="sent" class="panel mailbox">
+    {% if not sent or sent | length == 0 %}
+    <h1>Sent</h1>
+    You have no sent e-mails. Click "New message" to start writing a new e-mail.
+    {% else %}
+    {% for message in sent %}
+    <div class="mailbox-item" onclick="openModal({{ message['id'] }})">
+      <b>{{ message['addr_to'] }}</b>
+      <div style="display: flex; justify-content: space-between">
+	<p>{{ message['subject'] }}</p><p>{{ message['date'] }}</p>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+  <div id="new" class="panel writebox">
+    <form method='POST'>
+      <div class="writebox-head">
+	<div class="writebox-item"><label>From</label><input id="from" type="email" name="from" value="{{user['email']}}" readonly="readonly"></div>
+	<div class="writebox-item"><label>To</label><input id="to" type="email" name="to"></div>
+	<div class="writebox-item"><label>Object</label><input id="object" type="text" name="object"></div>
+      </div>
+      <textarea id="contents" name="contents"></textarea>
+      <button>Send</button>
+    </form>
+  </div>
+  <div id="modal" style="display: none">
+
+    <div class="mail-header">
+      <p id="mail-header-delete" onclick="del(window.currentMessage.id)">🗑</p>
+      <div class="mail-header-item">
+	<b>To </b><div id="mail-to">test@test.fr</div>
+      </div>
+      <div class="mail-header-item">
+	<b>From </b><div id="mail-from">test@test.fr</div>
+      </div>
+
+    </div>
+          <h3 id="mail-object">TestObject</h3>
+    <div class="mail-contents">
+      <p id="mail-contents">TestContents</p>
+    </div>
+    <button onclick="reply()">Reply</button>
+    <i id="modal-close" onclick="closeModal()">x</i>
+  </div>
+
+
+</body>
+</html>

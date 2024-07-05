@@ -1,0 +1,15 @@
+{
+    "purple.flamingo@photonmail.com": {"password": "hackthew0rld"},
+    "purple.flamingo1@photonmail.com": {"password": "hackthew0rld1"},
+    "purple.flamingo2@photonmail.com": {"password": "hackthew0rld2"},
+    "purple.flamingo3@photonmail.com": {"password": "hackthew0rld3"},
+    "purple.flamingo4@photonmail.com": {"password": "hackthew0rld4"},
+    "purple.flamingo5@photonmail.com": {"password": "hackthew0rld5"},
+    "purple.flamingo6@photonmail.com": {"password": "hackthew0rld6"},
+    "purple.flamingo7@photonmail.com": {"password": "hackthew0rld7"},
+    "purple.flamingo8@photonmail.com": {"password": "hackthew0rld8"},
+    "purple.flamingo9@photonmail.com": {"password": "hackthew0rld9"},
+    "guillermo.mcclure@powerzio.net": {"password": "hunter22", "model": "guillermo", "questions": ["Kiki", "Mrs. Frizzle", "1985-02-01"]},
+    "jack.traven@powerzio.net": {"password": "YOUREAWESOME!", "model": "jack"},
+    "rudy.costa@powerzio.net": {"password": "rudy@powerzio", "model": "rudy"}
+}

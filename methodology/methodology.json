@@ -1,0 +1,181 @@
+{
+  "PenetrationTest": {
+    "Introduction": "Penetration tests play a crucial role in cybersecurity, allowing organizations to detect and correct vulnerabilities before they can be exploited by malicious attackers.",
+    "Phases": [
+      {
+        "Name": "Pre-engagement",
+        "Description": "Documentation must be completed to define the legal context and frame the audit. This involves creating a scoping document for the test.",
+        "Tools": [
+          {
+            "Name": "VMware",
+            "Type": "Infrastructure",
+            "Description": "Virtual machine software used for setting up pentesting environments."
+          },
+          {
+            "Name": "Virtualbox",
+            "Type": "Infrastructure",
+            "Description": "Another virtual machine software useful for creating isolated environments."
+          },
+          {
+            "Name": "QEMU/KVM",
+            "Type": "Infrastructure",
+            "Description": "A virtual machine platform for Linux that offers robust options for managing VMs."
+          },
+          {
+            "Name": "Maltego",
+            "Type": "Assessment Tool",
+            "Description": "An interactive data mining tool that renders directed graphs for link analysis."
+          },
+          {
+            "Name": "Metasploit Framework",
+            "Type": "Assessment Tool",
+            "Description": "Collection of remote exploits and post exploitation tools for all platforms."
+          },
+          {
+            "Name": "Burpsuite",
+            "Type": "Assessment Tool",
+            "Description": "Can be used as a proxy as well as an active scanner for web applications."
+          }
+        ],
+        "Checklist": [
+          "Determination of the type of pentest (Blackbox, Whitebox)",
+          "Key objectives behind this penetration test",
+          "Location address and contact if it is an onsite job",
+          "Validation that the Authorization Letter has been signed",
+          "URL of the web application that is in scope and validation that is accessible",
+          "2 sets of credentials (normal and admin) and validation that they are working",
+          "Determination of the environment (Production or UAT)",
+          "Testing Boundaries (DoS, Brute force attacks etc.)",
+          "Any VPN or port numbers are needed and verify those ahead of time",
+          "Web application firewalls and other IDS in place",
+          "Timeframe of the assessment (dates and hours)"
+        ]
+      },
+      {
+        "Name": "Reconnaissance",
+        "Description": "Gather as much information as possible about the target system. The goal is to map out the digital footprint of the target and identify potential entry points.",
+        "Tools": [
+          {
+            "Name": "whois enumeration",
+            "Description": "Tool to gather domain registration details."
+          },
+          {
+            "Name": "prips",
+            "URL": "https://manpages.ubuntu.com/manpages/focal/man1/prips.1.html",
+            "Description": "Tool for IP range generation on Linux."
+          },
+          {
+            "Name": "urlscan",
+            "URL": "https://urlscan.io/",
+            "Description": "A tool for scanning and analyzing website URLs."
+          },
+          {
+            "Name": "robtex",
+            "URL": "https://www.robtex.com/dns-lookup/fenrir.pro",
+            "Description": "Provides DNS and domain based information gathering."
+          }
+        ],
+        "Techniques": [
+          "Domain profiling",
+          "Subdomain Enumeration",
+          "Certificates transparency enumeration",
+          "WaybackMachine Archives"
+        ]
+      },
+      {
+        "Name": "Scanning",
+        "Description": "Identify open ports, active services, and vulnerabilities.",
+        "Tools": [
+          {
+            "Name": "Accunetix",
+            "Description": "Automated tool to scan and identify web application vulnerabilities."
+          },
+          {
+            "Name": "Nmap",
+            "Description": "Port scanning utility."
+          },
+          {
+            "Name": "OpenVas",
+            "Description": "Open source vulnerability scanner and manager."
+          },
+          {
+            "Name": "Vega",
+            "Description": "A free and open source web security scanner."
+          }
+        ],
+        "Techniques": [
+          "SSL scanning",
+          "Credential Spraying"
+        ]
+      },
+      {
+        "Name": "Exploitation",
+        "Description": "Actively exploiting identified vulnerabilities to gain unauthorized access or escalate privileges within the system.",
+        "Tools": [
+          {
+            "Name": "CyberChef",
+            "URL": "https://gchq.github.io/CyberChef/",
+            "Description": "A web app for encryption, encoding, compression, and data analysis."
+          },
+          {
+            "Name": "exploit-db",
+            "URL": "https://www.exploit-db.com/",
+            "Description": "A database of known exploits."
+          }
+        ],
+        "Techniques": [
+          "Initial Intrusion",
+          "Windows Evasion"
+        ]
+      },
+      {
+        "Name": "Post Exploitation",
+        "Description": "Determine the potential damage and data exposure that could occur. It involves exploring the compromised system to understand the depth of access obtained.",
+        "Tools": [
+          {
+            "Name": "Empire",
+            "Description": "Powershell framework for remote and post exploitation."
+          },
+          {
+            "Name": "Pwdump7",
+            "Description": "Tool for dumping Windows passwords."
+          }
+        ],
+        "Techniques": [
+          "Privilege Escalation",
+          "Persistent payloads"
+        ]
+      },
+      {
+        "Name": "Reporting",
+        "Description": "Compiling findings, methodologies, and evidence into a comprehensive report.",
+        "Tools": [
+          {
+            "Name": "Typst",
+            "URL": "https://typst.app",
+            "Description": "Tool used for generating formatted pentest reports."
+          }
+        ],
+        "Resources": [
+          {
+            "Name": "Kali-reporting-tools",
+            "URL": "https://resources.infosecinstitute.com/kali-reporting-tools/#gref",
+            "Description": "A collection of tools available in Kali for reporting."
+          }
+        ]
+      }
+    ],
+    "Resources": [
+      {
+        "Name": "Pentest-methodology",
+        "URL": "https://github.com/kyawthiha7/pentest-methodology",
+        "Description": "A repository providing methodologies for penetration testing."
+      },
+      {
+        "Name": "OSINT Framework",
+        "URL": "https://osintframework.com/",
+        "Description": "Framework for organizing tools used during the open source intelligence phase of a security assessment."
+      }
+    ]
+  }
+}
