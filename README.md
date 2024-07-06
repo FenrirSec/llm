@@ -33,11 +33,7 @@ Here you'll find various code snippets illustrating the use of LLMs in cybersecu
 
 ## 🛠️ Usage
 
-Feel free to explore and experiment with the code snippets. If you have any questions or run into issues, please open an issue on this repository.
-
-## 📧 Contact
-
-If you have any questions about the talk or the code, you can reach me at [your email address].
+Feel free to explore and experiment with the code snippets. If you run into issues, please open an issue on this repository.
 
 ---
 
